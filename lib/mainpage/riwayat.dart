@@ -75,7 +75,7 @@ class _AkunPageState extends State<AkunPage> {
                   width: MediaQuery.of(context).size.width,
                   height: 560,
                   decoration: BoxDecoration(
-                      color: Colors.amberAccent,
+                      color: Color.fromARGB(255, 122, 235, 225),
                       borderRadius: BorderRadius.circular(5)),
                   child: StreamBuilder(
                       stream: invoice.snapshots(),

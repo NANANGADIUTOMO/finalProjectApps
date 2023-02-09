@@ -280,7 +280,7 @@ class _ProductPageState extends State<ProductPage> {
                           ),
                           child: IconButton(
                             onPressed: () {
-                              context.goNamed('shop');
+                              // context.goNamed('shop');
                             },
                             icon: Icon(Icons.shopping_bag),
                           ),

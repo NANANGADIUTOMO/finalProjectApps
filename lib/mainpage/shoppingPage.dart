@@ -54,6 +54,8 @@ class _ShoppingPageState extends State<ShoppingPage> {
       });
     }
 
+    var jumlahstok = jmlBeli - stock;
+
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference invoice = firestore.collection('invoice');
 
@@ -266,6 +268,9 @@ class _ShoppingPageState extends State<ShoppingPage> {
                               )
                             ],
                           ),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Container(
                             width: double.infinity,
                             height: 5,
@@ -290,70 +295,80 @@ class _ShoppingPageState extends State<ShoppingPage> {
                               ],
                             ),
                           ),
-                          Container(
-                            width: double.infinity,
-                            height: 50,
-                            decoration:
-                                BoxDecoration(color: Colors.transparent),
-                            padding: EdgeInsets.only(left: 5, right: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(nama),
-                                Text("${(stock)}"),
-                                Text("${harga}"),
-                                Container(
-                                  width: 110,
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 1, color: Colors.grey),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 15),
+                            child: Container(
+                              width: double.infinity,
+                              height: 50,
+                              decoration:
+                                  BoxDecoration(color: Colors.transparent),
+                              padding: EdgeInsets.only(left: 5, right: 5),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(nama),
+                                  Text("${(stock)}"),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Container(
+                                        width: 30,
+                                        height: 30,
+                                        color: Colors.amber,
+                                        child: Text("${harga}")),
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          height: 30,
-                                          width: 30,
-                                          color: Colors.blue,
-                                          child: IconButton(
-                                            color: Colors.black,
-                                            onPressed: () {
-                                              _kurangJumlahBeli();
-                                              // _tambahStock();"
-                                            },
-                                            icon: Icon(Icons.remove),
-                                            iconSize: 12,
-                                          ),
-                                        ),
-                                        Text(
-                                          "${jmlBeli}",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .caption,
-                                        ),
-                                        Container(
-                                          height: 30,
-                                          width: 30,
-                                          color: Colors.blue,
-                                          child: IconButton(
-                                            color: Colors.black,
-                                            onPressed: () {
-                                              _tambahjmlbeli();
-                                            },
-                                            icon: Icon(Icons.add),
-                                            iconSize: 15,
-                                          ),
-                                        ),
-                                      ],
+                                  Container(
+                                    width: 110,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 1, color: Colors.grey),
                                     ),
-                                  ),
-                                )
-                              ],
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                            height: 30,
+                                            width: 30,
+                                            color: Colors.blue,
+                                            child: IconButton(
+                                              color: Colors.black,
+                                              onPressed: () {
+                                                _kurangJumlahBeli();
+                                              },
+                                              icon: Icon(Icons.remove),
+                                              iconSize: 12,
+                                            ),
+                                          ),
+                                          Text(
+                                            "${jmlBeli}",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .caption,
+                                          ),
+                                          Container(
+                                            height: 30,
+                                            width: 30,
+                                            color: Colors.blue,
+                                            child: IconButton(
+                                              color: Colors.black,
+                                              onPressed: () {
+                                                _tambahjmlbeli();
+                                              },
+                                              icon: Icon(Icons.add),
+                                              iconSize: 15,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           Container(
@@ -370,6 +385,12 @@ class _ShoppingPageState extends State<ShoppingPage> {
                             height: 50,
                             color: Colors.transparent,
                             margin: EdgeInsets.symmetric(vertical: 4),
+                            child: Row(
+                              children: [
+                                Text("Stok Tersedia : "),
+                                Text("${stock - jmlBeli}" + " pcs")
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 10,
