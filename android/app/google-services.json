@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749243119686",
+    "project_id": "backendfinalprojectapps",
+    "storage_bucket": "backendfinalprojectapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749243119686:android:d14db5eef87faa7afe7247",
+        "android_client_info": {
+          "package_name": "com.example.ewarungapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749243119686-ee5c44a86f7r64p7ntok229mdkrkf3m6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD63NvQ9rivCyp5zUGObHnZ941URWQv0rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749243119686-ee5c44a86f7r64p7ntok229mdkrkf3m6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
