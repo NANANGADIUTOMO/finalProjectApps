@@ -75,13 +75,13 @@ class NanangRoute {
               return const omsetPage();
             },
           ),
-          // GoRoute(
-          //   path: 'grafik',
-          //   name: 'grafik',
-          //   builder: (context, state) {
-          //     return grafikPage();
-          //   },
-          // )
+          GoRoute(
+            path: 'grafik',
+            name: 'grafik',
+            builder: (context, state) {
+              return grafikPage();
+            },
+          )
         ])
   ], initialLocation: '/login', debugLogDiagnostics: true, routerNeglect: true);
 }
