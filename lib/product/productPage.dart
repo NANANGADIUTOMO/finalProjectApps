@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:go_router/go_router.dart';
 import 'package:get/get.dart';
 import '../mainpage/shoppingPage.dart';
+import '../model/productmodel.dart';
 
 TextEditingController _productName = TextEditingController();
 TextEditingController _productQty = TextEditingController();

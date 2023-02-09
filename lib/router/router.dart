@@ -11,8 +11,6 @@ import '../mainpage/loginPage.dart';
 import '../mainpage/notaPage.dart';
 import '../mainpage/riwayat.dart';
 import '../product/productPage.dart';
-import '../screen/cartscreen.dart';
-import '../screen/catalogscreen.dart';
 
 class NanangRoute {
   final GoRouter router = GoRouter(routes: [
@@ -78,21 +76,6 @@ class NanangRoute {
                     );
                   },
                 ),
-                GoRoute(
-                    path: 'catalog',
-                    name: 'catalog',
-                    builder: (context, state) {
-                      return const CatalogScreen();
-                    },
-                    routes: [
-                      GoRoute(
-                        path: 'cartscreen',
-                        name: 'cartscreen',
-                        builder: (context, state) {
-                          return const CartScreen();
-                        },
-                      )
-                    ]),
               ]),
           GoRoute(
             path: 'omset',

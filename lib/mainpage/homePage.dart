@@ -193,58 +193,6 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  context.goNamed('catalog');
-                                },
-                                child: Container(
-                                  width: 70,
-                                  height: 70,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 122, 235, 225),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 9,
-                                      ),
-                                      Image.asset(
-                                        "assets/servis.png",
-                                        width: 40,
-                                        height: 40,
-                                      ),
-                                      Text("catalog")
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  context.goNamed('cartscreen');
-                                },
-                                child: Container(
-                                  width: 70,
-                                  height: 70,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 122, 235, 225),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 9,
-                                      ),
-                                      Image.asset(
-                                        "assets/servis.png",
-                                        width: 40,
-                                        height: 40,
-                                      ),
-                                      Text("cart screen")
-                                    ],
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
