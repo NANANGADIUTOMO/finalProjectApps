@@ -182,9 +182,7 @@ class _AkunPageState extends State<AkunPage> {
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text(
-                                                            snap[
-                                                                'nama_customer'],
+                                                        Text(snap['customer'],
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
@@ -245,7 +243,7 @@ class _AkunPageState extends State<AkunPage> {
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text(snap['name'],
+                                                        Text(snap['items'],
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme

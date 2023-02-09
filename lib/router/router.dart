@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 
 import '../mainpage/homePage.dart';
 import '../mainpage/loginPage.dart';
-import '../mainpage/notaPage.dart';
 import '../mainpage/riwayat.dart';
 import '../product/productPage.dart';
 
@@ -51,22 +50,14 @@ class NanangRoute {
               },
               routes: [
                 GoRoute(
-                    path: 'shop',
-                    name: 'shop',
-                    builder: (context, state) {
-                      return ShoppingPage(
-                        goRouterState: state,
-                      );
-                    },
-                    routes: [
-                      GoRoute(
-                        name: 'nota',
-                        path: 'nota',
-                        builder: (context, state) {
-                          return NotaPage();
-                        },
-                      )
-                    ]),
+                  path: 'shop',
+                  name: 'shop',
+                  builder: (context, state) {
+                    return ShoppingPage(
+                      goRouterState: state,
+                    );
+                  },
+                ),
                 GoRoute(
                   path: 'detailproduct',
                   name: 'detailproduct',
@@ -84,13 +75,13 @@ class NanangRoute {
               return const omsetPage();
             },
           ),
-          GoRoute(
-            path: 'grafik',
-            name: 'grafik',
-            builder: (context, state) {
-              return grafikPage();
-            },
-          )
+          // GoRoute(
+          //   path: 'grafik',
+          //   name: 'grafik',
+          //   builder: (context, state) {
+          //     return grafikPage();
+          //   },
+          // )
         ])
   ], initialLocation: '/login', debugLogDiagnostics: true, routerNeglect: true);
 }

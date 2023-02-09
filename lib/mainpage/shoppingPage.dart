@@ -1,6 +1,7 @@
 import 'dart:html';
 import 'dart:js';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class ShoppingPage extends StatefulWidget {
 }
 
 class _ShoppingPageState extends State<ShoppingPage> {
+  final _formKey = GlobalKey<FormState>();
   int jmlBeli = 0;
 
   @override
@@ -420,9 +422,9 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                           title: Text("Invoice sudah disimpan"),
                                           content: TextButton(
                                               onPressed: () {
-                                                context.goNamed("nota");
+                                                context.pop();
                                               },
-                                              child: Text("Cetak Nota")),
+                                              child: Text("Okee")),
                                         ),
                                       );
                                     },

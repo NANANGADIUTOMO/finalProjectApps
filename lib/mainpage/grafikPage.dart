@@ -31,16 +31,6 @@ class _grafikPageState extends State<grafikPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ElevatedButton(onPressed: () {}, child: Text("per minggu")),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    ElevatedButton(onPressed: () {}, child: Text("per Hari"))
-                  ],
-                ),
                 Container(
                   decoration: BoxDecoration(color: _primaryCollor),
                   width: 350,
