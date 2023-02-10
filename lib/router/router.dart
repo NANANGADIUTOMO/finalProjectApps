@@ -36,10 +36,10 @@ class NanangRoute {
         },
         routes: [
           GoRoute(
-            path: 'akun',
-            name: 'akun',
+            path: 'riwayat',
+            name: 'riwayat',
             builder: (context, state) {
-              return const AkunPage();
+              return const RiwayatPage();
             },
           ),
           GoRoute(

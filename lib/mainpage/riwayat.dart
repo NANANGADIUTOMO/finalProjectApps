@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/foundation.dart';
@@ -6,22 +7,22 @@ import 'package:go_router/go_router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 
-class AkunPage extends StatefulWidget {
-  const AkunPage({super.key});
+class RiwayatPage extends StatefulWidget {
+  const RiwayatPage({super.key});
 
   @override
-  State<AkunPage> createState() => _AkunPageState();
+  State<RiwayatPage> createState() => _RiwayatPageState();
 }
 
-class _AkunPageState extends State<AkunPage> {
+class _RiwayatPageState extends State<RiwayatPage> {
   @override
   Widget build(BuildContext context) {
     DateTime currentTime = DateTime.now();
-
+// final Stream<QuerySnapshot> invoice = FirebaseFirestore.instance.collection('invoice').snapshots()''
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference invoice = firestore.collection('invoice');
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue.shade300,
       body: Stack(children: [
         Container(
           width: MediaQuery.of(context).size.width,
@@ -91,7 +92,7 @@ class _AkunPageState extends State<AkunPage> {
                                     left: 20, right: 20, top: 15),
                                 child: Container(
                                   width: 90,
-                                  height: 110,
+                                  height: 120,
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(5)),
@@ -153,7 +154,7 @@ class _AkunPageState extends State<AkunPage> {
                                                                   .textTheme
                                                                   .caption,
                                                         ),
-                                                        Text(":",
+                                                        Text(" : ",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
@@ -177,7 +178,7 @@ class _AkunPageState extends State<AkunPage> {
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text(":",
+                                                        Text(" : ",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
@@ -201,7 +202,7 @@ class _AkunPageState extends State<AkunPage> {
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text(":",
+                                                        Text(" : ",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
@@ -238,7 +239,7 @@ class _AkunPageState extends State<AkunPage> {
                                                                   .textTheme
                                                                   .caption,
                                                         ),
-                                                        Text(":",
+                                                        Text(" : ",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
@@ -262,13 +263,14 @@ class _AkunPageState extends State<AkunPage> {
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text(":",
+                                                        Text(" : ",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
                                                         Text(
-                                                            "${snap['jumlah'.toString()]}",
+                                                            "${snap['jumlah'.toString()]}" +
+                                                                " pcs",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
@@ -287,22 +289,56 @@ class _AkunPageState extends State<AkunPage> {
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text(":",
+                                                        Text(" : ",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
-                                                        Text("${snap['total']}",
+                                                        Text(
+                                                            "${snap['total']}" +
+                                                                ".000",
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
                                                                 .caption),
                                                       ],
                                                     ),
-                                                  )
+                                                  ),
                                                 ],
                                               ),
                                             ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 60, top: 30),
+                                              child: Column(
+                                                children: [
+                                                  IconButton(
+                                                      onPressed: () async {
+                                                        await invoice
+                                                            .doc(snap.id)
+                                                            .delete();
+                                                        final snackbar =
+                                                            SnackBar(
+                                                          content: Text(
+                                                              "data riwayat invoice sudah dihapus"),
+                                                          action:
+                                                              SnackBarAction(
+                                                            label: "ok",
+                                                            onPressed: () {},
+                                                          ),
+                                                        );
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                                snackbar);
+                                                      },
+                                                      icon: Icon(
+                                                        Icons.delete,
+                                                        color: Colors.red,
+                                                      ))
+                                                ],
+                                              ),
+                                            )
                                           ],
                                         ),
                                       )

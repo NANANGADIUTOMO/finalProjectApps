@@ -562,6 +562,20 @@ class _ProductPageState extends State<ProductPage> {
                                                                 documentSnapshot
                                                                     .id)
                                                             .delete();
+                                                        final snackbar =
+                                                            SnackBar(
+                                                          content: Text(
+                                                              "data product dihapus"),
+                                                          action:
+                                                              SnackBarAction(
+                                                            label: "ok",
+                                                            onPressed: () {},
+                                                          ),
+                                                        );
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                                snackbar);
                                                       },
                                                       icon: Icon(Icons.delete),
                                                       color: Colors.red),
@@ -589,21 +603,6 @@ class _ProductPageState extends State<ProductPage> {
                                                                     .id
                                                           },
                                                         );
-                                                        // var productAdd =
-                                                        //     await invoice.add({
-                                                        //   "name":
-                                                        //       documentSnapshot[
-                                                        //           'name'],
-                                                        //   "price":
-                                                        //       documentSnapshot[
-                                                        //           'price'],
-                                                        //   "qty":
-                                                        //       documentSnapshot[
-                                                        //           'qty']
-                                                        // });
-                                                        // setState(() {
-                                                        //   _tambahTextBagde();
-                                                        // });
                                                       },
                                                       icon: Icon(
                                                           Icons.shopping_cart),

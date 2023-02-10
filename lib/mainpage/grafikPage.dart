@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../modelGrafik/grafikOmset.dart';
 import 'package:go_router/go_router.dart';
 
-var _primaryCollor = Colors.green.shade400;
-
 class grafikPage extends StatefulWidget {
   @override
   State<grafikPage> createState() => _grafikPageState();
@@ -14,16 +12,75 @@ class _grafikPageState extends State<grafikPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _primaryCollor,
+      backgroundColor: Colors.blue.shade300,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 40,
-              decoration: BoxDecoration(color: Colors.blueGrey.shade400),
-              child: Center(child: Text("Data penjualan ")),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: 30,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade400,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: IconButton(
+                      onPressed: () {
+                        context.pop();
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        size: 15,
+                      )),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade400,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Center(child: Text("Data penjualan ")),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 9),
+                  child: Container(
+                    width: 100,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.blueGrey.shade400,
+                        borderRadius: BorderRadius.circular(5)),
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Perminggu",
+                          style: TextStyle(color: Colors.black),
+                        )),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade400,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Perbulan",
+                        style: TextStyle(color: Colors.black),
+                      )),
+                )
+              ],
             ),
             SizedBox(
               height: 15,
@@ -32,13 +89,22 @@ class _grafikPageState extends State<grafikPage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  decoration: BoxDecoration(color: _primaryCollor),
+                  decoration: BoxDecoration(color: Colors.green.shade400),
                   width: 350,
                   height: 200,
                   child: ngomsetLine(),
                 ),
               ],
             ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              decoration: BoxDecoration(color: Colors.green.shade400),
+              width: 350,
+              height: 200,
+              child: data(),
+            )
           ],
         ),
       ),

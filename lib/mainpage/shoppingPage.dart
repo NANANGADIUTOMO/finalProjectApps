@@ -125,7 +125,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                           style: Theme.of(context).textTheme.bodyText2,
                         ),
                         Text(
-                          "${TotalAmout}",
+                          "${TotalAmout}" + " .000",
                           style: Theme.of(context)
                               .textTheme
                               .headline6!
@@ -226,7 +226,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text("Product deskription",
+                                          Text("Product deskription :",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .caption),
@@ -246,7 +246,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text("Invoice Date",
+                                          Text("Tanggal Invoice :",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .caption),
@@ -288,9 +288,9 @@ class _ShoppingPageState extends State<ShoppingPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("items"),
-                                Text("stok"),
-                                Text("price"),
+                                Text("Items"),
+                                Text("Stok"),
+                                Text("Harga"),
                                 Text("Jumlah beli"),
                               ],
                             ),
@@ -310,20 +310,20 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                 children: [
                                   Text(nama),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 20),
+                                    padding: const EdgeInsets.only(left: 35),
                                     child: Container(
-                                        width: 30,
+                                        width: 60,
                                         height: 30,
                                         color: Colors.transparent,
-                                        child: Text("${(stock)}")),
+                                        child: Text("${(stock)}" + " unit")),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 30),
+                                    padding: const EdgeInsets.only(left: 20),
                                     child: Container(
-                                        width: 30,
+                                        width: 60,
                                         height: 30,
                                         color: Colors.transparent,
-                                        child: Text("${harga}")),
+                                        child: Text("${harga}" + ".000")),
                                   ),
                                   Container(
                                     width: 110,
@@ -437,7 +437,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                         "total": TotalAmout,
                                         "items": nama,
                                         "jumlah": jmlBeli,
-                                        "status": "sukses"
+                                        "status": "sukses",
                                       });
                                       _Namakasir.clear();
                                       _NameInvoice.clear();
@@ -450,7 +450,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                           title: Text("Invoice sudah disimpan"),
                                           content: TextButton(
                                               onPressed: () {
-                                                context.pop();
+                                                context.goNamed('riwayat');
                                               },
                                               child: Text("Okee")),
                                         ),
