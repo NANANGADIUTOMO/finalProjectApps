@@ -309,13 +309,20 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(nama),
-                                  Text("${(stock)}"),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 10),
+                                    padding: const EdgeInsets.only(left: 20),
                                     child: Container(
                                         width: 30,
                                         height: 30,
-                                        color: Colors.amber,
+                                        color: Colors.transparent,
+                                        child: Text("${(stock)}")),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 30),
+                                    child: Container(
+                                        width: 30,
+                                        height: 30,
+                                        color: Colors.transparent,
                                         child: Text("${harga}")),
                                   ),
                                   Container(
